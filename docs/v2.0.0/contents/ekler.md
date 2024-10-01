@@ -18,7 +18,7 @@ Açık Bankacılık simülatör uygulaması üzerinde swagger dökümanlarının
 | TR.OHVPS.DataCode.IslemTuru | Hesap hareketleri (işlemler) sorgusunda dönülen İşlem Türü (islTur) parametresi aşağıdaki değerlerden birini alabilir:<br>HAVALE<br>EFT<br>FAST<br>PARA_YATIRMA<br>PARA_CEKME<br>YABANCI_PARA_HAVALE<br>YATIRIM_HESABINA_AKTARIM<br>YATIRIM_HESABINDAN_AKTARIM<br>KURUM_FATURA_ODEMESI<br>CEK<br>SENET<br>SIGORTA_ODEMESI<br>UCRET_KOMISYON_FAIZ<br>SGK_ODEMESI<br>VERGI_ODEMESI<br>DOVIZ_ALIM<br>DOVIZ_SATIM<br>KREDI_ODEMESI<br>KREDI_KULLANIM<br>KK_ODEMESI<br>KK_NAKIT_AVANS<br>SANS_OYUNU<br>UYE_ISYERI_ISLEMLERI<br>HGS_OGS_ISLEMLERI<br>DOGRUDAN_BORCLANDIRMA_SISTEMI<br>DIGER<br>|
 | TR.OHVPS.DataCode.IzinTur | 01: Temel Hesap Bilgisi<br>02: Ayrıntılı Hesap Bilgisi<br>03: Bakiye Bilgisi<br>04: Temel İşlem (Hesap Hareketleri) Bilgisi<br>05: Ayrıntılı İşlem Bilgisi<br>06: Anlık Bakiye Bildirimi|
 | TR.OHVPS.DataCode.KareKodAksTur | Karekod Akış Türü Karekod ödemesinin hangi akışla gerçekleştirildiğini gösterir.<br> 01: FAST katılımcısından dinamik doğrulamalı hizmet alınan işyeri ödemesi<br>02: FAST katılımcısından statik doğrulamalı işyeri ödemesi<br>03: Kişiden kişiye ödemeler |
-| TR.OHVPS.DataCode.KaynakTip | HESAP_BILGISI_RIZASI<br> ODEME_EMRI_RIZASI <br> ODEME_EMRI <br>  BAKIYE <br>  COKLU_ISLEM_TALEBI <br>  HHS <br>  YOS |
+| TR.OHVPS.DataCode.KaynakTip | HESAP_BILGISI_RIZASI<br> ODEME_EMRI_RIZASI <br> ODEME_EMRI <br> ILERI_TARIHLI_ODEME_EMRI_RIZASI <br> ILERI_TARIHLI_ODEME_EMRI <br> DUZENLI_ODEME_EMRI_RIZASI <br> BAKIYE <br>  COKLU_ISLEM_TALEBI <br>  HHS <br>  YOS |
 | TR.OHVPS.DataCode.KimlikTur | Kod, Tip, Format<br>K , TCKN , N11<br>M , MNO , AN1..30 (HHS’ye özel bireysel veya kurum müşteri numarası)<br>Y , YKN , N11<br>P , PNO , AN7..9 |
 | TR.OHVPS.DataCode.KolasHspTur | Hesabın bireysel veya ticari nitelikte olduğunu belirtir:<br>B: Bireysel<br>T: Ticari |
 | TR.OHVPS.DataCode.KolasTur | Müşterinin sorgulama istediği Kolay Adres Tipi değeridir. Alabileceği değerler BKM “Kolay Adresleme Sistemi Uygulama Kuralları” belgesinde tanımlıdır:<br>T: Telefon Numarası<br>E: E-Posta<br>K: TCKN<br>V: VKN<br>Y: YKN<br>P: Pasaport Numarası |
@@ -27,7 +27,7 @@ Açık Bankacılık simülatör uygulaması üzerinde swagger dökümanlarının
 | TR.OHVPS.DataCode.LogoFormat | SVG :  Logonun svg formatında olmasını ifade eder. Logonun 1:2 oranında olması gerekmektedir. <br> PNG : Logonun png formatında olmasını ifade eder. Logonun 500 X 1000 px olması gerekmektedir.|
 | TR.OHVPS.DataCode.LogoTur | FULL_LOGO   : Yazı ve ikon şekillerin bir arada olduğu logo <br> ICON_LOGO : İkon şekillerin olduğu ( Sadece görsel olan-yazısız ) logo |
 | TR.OHVPS.DataCode.OdemeAmaci | Ödemenin Amacına yönelik olarak aşağıdaki değerlerden birini alır:<br>01: Konut Kirası Ödemesi<br>02: İş yeri Kirası Ödemesi<br>03: Diğer Kira Ödemesi<br>04: E-Ticaret Ödemesi: Elektronik ticaret işlem amaçlı aktarımlar<br>05: Çalışan Ödemesi: Maaş, harcırah, prim gibi çalışan ödemeleri<br>06: Ticari ödeme: Ticari işletmelerin birbirlerine, kendi hesaplarına veya müşterilerine ödemeleri, borç, ithalat, ihracat, şirket satın alma, vb. kapsamında ödemeler<br>07: Bireysel Ödeme: Özel amaçlı (aile bireylerine, hediye, bağış, borç, alışveriş vs.) ödemeler<br>08: Yatırım: Mevduat, menkul kıymet, döviz, gayrı menkul, taşıt, varlık alımı, temettü ödeme, tahsilat vb. gibi yatırım amaçlı ödemeler<br>09: Finansal: Kredi, depo, repo, türev, finansal varlık alım/satımı vb. ödemeler<br>10: Eğitim ödemesi<br>11: Aidat ödemesi |
-| TR.OHVPS.DataCode.OdemeDurumu | Ödemenin durumunu gösterir. Alabileceği değerler:<br>01: Gerçekleşti (Ödeme ilgili ödeme sistemine iletildi ve alıcı hesabına ulaştı.) <br>02: Gönderildi (Ödeme ilgili ödeme sistemine iletildi ancak alıcı hesabına ulaştığına dair teyit alınmadı.)İşlemin son durumunun teyidi için YÖS sorgulama yapmalıdır.<br>03- Gerçekleşmedi (Ödemenin ilgili ödeme sistemine işletiminde veya işlenmesi sırasında hata, zaman aşımı, sistemin gün sonu işlemlerine başlaması vb. durum oluştu ve ödeme gereçeklemedi veya iade edildi.)<br>04- Onayda bekliyor (Ödeme emri alındı. Çoklu onay akışının tamamlanması bekleniyor.)<br>05- İşleme Alındı ( Ödeme emri alındı. ) YÖS tarafından müşteriye gösterilmeyen bir koddur. Bu kod dönüldüğünde YÖS uygulamasında ÖHK’ya ödeme durumu 02-Gönderildi  olarak gösterilir. İşlemin son durumunun teyidi için YÖS sorgulama yapmalıdır.|
+| TR.OHVPS.DataCode.OdemeDurumu | Ödemenin durumunu gösterir. Alabileceği değerler:<br>01: Gerçekleşti (Ödeme ilgili ödeme sistemine iletildi ve alıcı hesabına ulaştı.) <br>02: Gönderildi (Ödeme ilgili ödeme sistemine iletildi ancak alıcı hesabına ulaştığına dair teyit alınmadı.)İşlemin son durumunun teyidi için YÖS sorgulama yapmalıdır.<br>03- Gerçekleşmedi (Ödemenin ilgili ödeme sistemine işletiminde veya işlenmesi sırasında hata, zaman aşımı, sistemin gün sonu işlemlerine başlaması vb. durum oluştu ve ödeme gereçeklemedi veya iade edildi.)<br>04- Onayda bekliyor (Ödeme emri veya ileri tarihli ödeme emri alındı. Çoklu onay akışının tamamlanması bekleniyor.)<br>05- Ödeme Bekleniyor ( Ödeme Sistemine gönderilmeden önceki statüdür.)<br>06- Kısmen Gerçekleşti ( İleri tarihli ödeme talimatlarında kısmi ödeme yapılan işlemler için geçerli statüdür.)<br>07- İptal Edildi ( Ödeme sistemine gönderilemden önce müşteri ya da herhangi bir sebepten iptal edilen durumlarda kullanılabilir.)
 | TR.OHVPS.DataCode.OdemeKaynak | I: İnternet bankacılığından gönderilen ödemelerde kullanılır.<br>A: Otomatik para makineleri (ATM) ile gönderilen ödemelerde kullanılır.<br>T: Telefon bankacılığı ile gönderilen ödemelerde kullanılır.<br>K: Kiosklar aracılığıyla gönderilen ödemelerde kullanılır.<br>S: Şubeden girilen ödemelerde kullanılır.<br>M: Mobil uygulamadan gönderilen ödemelerde kullanılır.<br>D: Yukarıdakiler dışındaki ödeme kaynaklarından gönderilen ödemelerde kullanılır.<br> O: Açık bankacılık aracılığı ile gönderilen ödemelerde kullanılır.<br> |
 | TR.OHVPS.DataCode.OdemeSistemi | İşlemin yönlendirildiği Ödeme Sistemine göre aşağıdaki değerlerden birini alabilir:<br>H: Havale<br>F: FAST<br>E: EFT (PÖS)<br>değerlerinden birini alabilir.|
 | TR.OHVPS.DataCode.OhkTur | B: Bireysel <br>K: Kurumsal |
@@ -35,13 +35,15 @@ Açık Bankacılık simülatör uygulaması üzerinde swagger dökümanlarının
 | TR.OHVPS.DataCode.OlayTip | KAYNAK_GUNCELLENDI <br>AYRIK_GKD_BASARILI<br>AYRIK_GKD_BASARISIZ<br>HHS_YOS_GUNCELLENDI|
 | TR.OHVPS.DataCode.YOSDurumu | A : Açık. Üretim Ortamında YÖS’ün aktif bir şekilde hizmet vermesi durumu.<br>  G : Geçici Hizmet Veremiyor. YÖS servislerinde teknik bir sorun olması nedeniyle YÖS'ün hizmet verememesi durumu. <br> K: Kapalı. YÖS'ün hizmet vermeme durumu. |
 | TR.OHVPS.DataCode.PSUInitiated | ‘E’ : Evet<br> ‘H’ : Hayır <br> ‘O’ : Olay Bildirim|
-| TR.OHVPS.DataCode.RizaDurumu | B: Yetki Bekleniyor<br>Y: Yetkilendirildi<br>K: Yetki Kullanıldı<br>E: Yetki Ödeme Emrine Dönüştü<br>S: Yetki Sonlandırıldı<br>I :Yetki Iptal |
+| TR.OHVPS.DataCode.RizaDurumu | B: Yetki Bekleniyor<br>Y: Yetkilendirildi<br>K: Yetki Kullanıldı<br>E: Yetki Ödeme Emrine/Talimata Dönüştü<br>S: Yetki Sonlandırıldı<br>I :Yetki Iptal |
 | TR.OHVPS.DataCode.RizaIptDtyKod | ‘01’ :Yeni Rıza Talebi ile İptal<br>‘02’ :Kullanıcı İsteği ile HHS üzerinden İptal<br>‘03’ :Kullanıcı İsteği ile YÖS üzerinden İptal<br>‘04’ :Süre Aşımı : Yetki Bekleniyor<br>‘05’ :Süre Aşımı : Yetkilendirildi<br>‘06’ :Süre Aşımı : Yetki Ödemeye Dönüşmedi<br>‘07’ :GKD iptali : Aynı rıza no ile mükerrer çağrımı<br>‘08’ :GKD iptali : Rızano ile TCKN uyuşmaması<br>‘09’ :GKD iptali : Uygun ürünü bulunmuyor<br>‘10’ :GKD iptali : HHS Açık Bankacılık kanalı işleme kapalı<br>’11’ :GKD iptali : Hesap Yetki Sorunu<br>‘12’ :GKD iptali : ÖHK HHS kontrollerini aşamadı<br>‘13’ :GKD iptali : ÖHK isteği ile GKD’den vazgeçildi<br>‘14’ :GKD iptali : Fraud Şüphesi<br>‘99’ :GKD iptali : Diğer<br>|
-| TR.OHVPS.DataCode.RizaTip | H: Hesap Bilgisi Rızası<br>O: Ödeme Emri Rızası |
+| TR.OHVPS.DataCode.RizaTip | H: Hesap Bilgisi Rızası<br>O: Ödeme Emri Rızası<br> I: İleri Tarihli Ödeme Emri Rızası<br>D: Düzenli Ödeme Emri Rızası |
 | TR.OHVPS.DataCode.SrlmYon | ‘A’: Azalan değerle sıralama<br>‘Y’: Artan değerle sıralama |
 | TR.OHVPS.DataCode.VarYok | 0 : Kayıt Yok <br> 1 : Kayıt Var |
 | TR.OHVPS.DataCode.YetTip | Alabileceği değerlere göre hangi belirtecin döneceğine karar verilir.<br>yet_kod<br>yenileme_belirteci |
 | TR.OHVPS.DataCode.ZmnAralik | 0 : Kayıt Yok <br>1 : 0-2 saat<br>2 : 2 saat 1 dakika-24 saat<br> 3 : 1-3 gün <br> 4 : 4-15 gün	<br> 5 : 16 gün ve üstü |
+| TR.OHVPS.DataCode.HizmetTipi | 01:  Ayrık GKD <br>02 : İleri Tarihli Ödeme<br>03 : Düzenli Ödeme|
+| TR.OHVPS.DataCode.OdemePeriyodu | G:  Günlük <br>H : Haftalık<br>A : Aylık<br>D : Diğer|
 
 
 
@@ -82,21 +84,24 @@ Hizmet sağlayıcı olan HHS'ler tarafından sunucu sertifikaları uygulanmalıd
 
 ## EK-5: Mesaj İmzalama Akışı
 
-Dijital imzalama yapısı, ÖHVPS API’de gerçekleştirilen işlemlerin ve taşınan verilerin bütünlük ve inkâr edilemezliğini sağlamak amacıyla kurgulanmıştır. 
-Bu kapsamda imzalama akışı aşağıdaki gibi olmalıdır:  
+Dijital imzalama yapısı, ÖHVPS API’de gerçekleştirilen işlemlerin ve taşınan verilerin bütünlük ve inkâr edilemezliğini sağlamak amacıyla kurgulanmıştır.  İmzaların kaynak bazında hangi istek ve yanıtlara uygulandığı belirlidir.
 
-- HHS ya da YÖS öncelikle özel ve açık anahtarlarını oluşturmalıdır. Bu anahtarları oluşturmak için aşağıda “openssl” kullanılarak oluşturma örneği paylaşılmıştır.  Bu anahtarlardan özel olan anahtar mesajı imzalamak için kullanılacak olup, açık anahtar ise mesajı doğrulamak amacıyla mesajın alıcısı tarafından kullanılacaktır.
+API yalnızca TLS'ye dayanırsa, dijital kayıtları ve inkâr edilemezlik kanıtlarını tutmak zor olur. Bu nedenle, TLS'ye dayanmayan bir inkâr edilemezlik çözümü olarak API isteğinin HTTP başlığında bir JWS kullanılarak sağlanabilir.
 
-private_key.pem ve public_key.pem dosyasinin içerikleri kod tarafında kullanılacaktır.
+HTTP isteğinin gövdesinin hash fonksiyonu (SHA256) ile özeti alınacaktır. Elde edilen özet, asimetrik anahtarları destekleyen bir algoritma kullanılarak imzalanacak ve JWS elde edilecektir. İsteğin kendinize geldiği durumda body üzerinde hiç bir değişikliğe tabi tutmadan (serialize/deserialize, minify, trim, vb yapmadan) doğrulama yapmanız gerekmektedir. Aynı şekilde isteğin kendinizden çıktığı aşamada da response body üzerinde hiç bir değişikliğe tabi tutmadan (serialize/deserialize, minify, trim, vb yapmadan) mesaj imzalama yapılmalıdır.
 
---private.pem => Özel anahtarın ismi
-openssl genrsa -out private.pem 2048
+Bu kapsamda imzalama akışı aşağıdaki gibi olmalıdır:
 
+-	HHS ve YÖS öncelikle özel ve açık anahtarlarını oluşturmalıdır. Bu anahtarları oluşturmak için aşağıda “openssl” kullanılarak oluşturma örneği paylaşılmıştır. Bu anahtarlardan özel olan anahtar mesajı imzalamak için kullanılacak olup, açık anahtar ise mesajı doğrulamak amacıyla mesajın alıcısı tarafından kullanılacaktır.
 
---public_key.pem => Açık anahtarın ismi
-openssl rsa -in private.pem -pubout -outform PEM -out public_key.pem
+Özel anahtarın oluşturulması. private.pem => Özel anahtar <br>
+**```openssl genrsa -out private.pem 2048```**<br><br>
 
---private_key.pem => Özel anahtarın PCKS8 formatına çevrilmesi (Java açısından PCKS8 formatında olma ihtiyacı nedeniyle) openssl pkcs8 -topk8 -inform PEM -in private.pem -out private_key.pem -nocrypt
+Özel anahtardan açık anahtarın oluşturulması. public_key.pem => Açık anahtar (BKM ile paylaşılacak açık anahtar)<br>
+**```openssl rsa -in private.pem -pubout -outform PEM -out public_key.pem```**<br><br>
+
+Opsiyonel olarak özel anahtarın PCKS8 formatına çevrilmesi (Java açısından PCKS8 formatında olma ihtiyacı nedeniyle). private_key.pem => Özel anahtarın formatlanmış hali. <br>
+**```openssl pkcs8 -topk8 -inform PEM -in private.pem -out private_key.pem –nocrypt```**<br><br>
 
 - Açık ve Özel anahtarlar oluşturulduktan sonra Açık Anahtar BKM ile paylaşılır. BKM bu açık anahtarı diğer katılımcıların ulaşabilmesi ve alabilmesi için bir Anahtar Deposu yaklaşımı ile bünyesinde tutar. İlgili anahtarı iletebilmek ve alabilmek için kullanılacak HHS/YOS API ye erişim detayları EK-6 bölümünde detaylı olarak paylaşılmıştır.  Eğer kurumun ilgili anahtar çiftinin yenilenme durumu söz konusu ise yenilemenin hemen ardından açık anahtar yeni bir imzalama yapılmadan önce mutlaka BKM ile paylaşılmalıdır.
 
